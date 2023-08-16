@@ -44,8 +44,6 @@ function pluginInit(editor) {
       if (items[key].labelPromise) {
         items[key].labelPromise().then(function (label) {
           editor.getMenuItem(items[key].name).label = label;
-        }).catch(function () {
-          console.error('Could not resolve labels for', items[key]);
         });
       }
     });
